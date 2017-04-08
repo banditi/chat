@@ -19,7 +19,7 @@
     "chat"
   ],
   "author": "Igor Stepanov <sigorilla@yandex.ru>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/banditi/chat/issues"
   },
