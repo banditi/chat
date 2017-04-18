@@ -9,7 +9,8 @@
     "test-coveralls": "npm test && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint .",
     "validate": "npm run lint && npm test",
-    "precommit": "npm run validate"
+    "precommit": "npm run validate",
+    "commitmsg": "DEBUG=hook:* node hooks/commit.js"
   },
   "repository": {
     "type": "git",
