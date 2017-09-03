@@ -1,3 +1,5 @@
+'use strict';
+
 const debug = require('debug')('chat:error-middleware');
 
 // eslint-disable-next-line no-unused-vars

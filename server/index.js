@@ -1,3 +1,5 @@
+'use strict';
+
 const log = require('debug')('chat:app');
 
 const app = require('./app');

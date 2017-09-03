@@ -1,3 +1,5 @@
+'use strict';
+
 const chai = require('chai');
 chai.should();
 const request = require('supertest');
