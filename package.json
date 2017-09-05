@@ -5,12 +5,13 @@
   "main": "server/index.js",
   "scripts": {
     "start": "DEBUG=chat:* node server/index.js",
-    "test": "istanbul cover _mocha -- -R spec --recursive --check-leaks",
+    "test": "NODE_ENV=test istanbul cover _mocha -- -R spec --recursive --check-leaks",
     "test-coveralls": "npm test && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.vue --ignore-pattern '!.eslintrc.js'",
     "validate": "npm run lint && npm test",
     "precommit": "npm run validate",
-    "commitmsg": "DEBUG=hook:* node hooks/commit.js"
+    "commitmsg": "DEBUG=hook:* node hooks/commit.js",
+    "build": "webpack --progress"
   },
   "repository": {
     "type": "git",
@@ -33,17 +34,39 @@
     "debug": "2.6.3",
     "express": "4.15.2",
     "glob": "7.1.2",
-    "joi": "10.6.0"
+    "joi": "10.6.0",
+    "vue": "2.4.2"
   },
   "devDependencies": {
+    "autoprefixer": "7.1.3",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
     "chai": "3.5.0",
     "coveralls": "2.12.0",
+    "css-loader": "0.28.7",
     "eslint": "4.6.0",
     "eslint-config-loris": "8.0.0",
+    "eslint-plugin-vue": "3.13.0",
+    "extract-text-webpack-plugin": "3.0.0",
     "husky": "0.13.2",
     "istanbul": "0.4.5",
     "mocha": "3.2.0",
     "node-mocks-http": "1.6.1",
-    "supertest": "3.0.0"
-  }
+    "postcss": "6.0.10",
+    "postcss-loader": "2.0.6",
+    "sugarss": "1.0.0",
+    "supertest": "3.0.0",
+    "vue-loader": "13.0.4",
+    "vue-template-compiler": "2.4.2",
+    "webpack": "3.5.5",
+    "webpack-dev-middleware": "1.12.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
