@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "DEBUG=chat:* node server/index.js",
-    "test": "istanbul cover _mocha -- -R spec --recursive --check-leaks",
+    "test": "NODE_ENV=test istanbul cover _mocha -- -R spec --recursive --check-leaks",
     "test-coveralls": "npm test && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint .",
     "validate": "npm run lint && npm test",
@@ -30,7 +30,10 @@
   },
   "dependencies": {
     "debug": "2.6.3",
-    "express": "4.15.2"
+    "express": "4.15.2",
+    "pg": "6.1.5",
+    "pg-hstore": "2.3.2",
+    "sequelize": "4.8.0"
   },
   "devDependencies": {
     "chai": "3.5.0",

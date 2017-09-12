@@ -23,6 +23,14 @@ npm run validate
 npm test
 ```
 
+## Model
+We are using [Sequelize](http://docs.sequelizejs.com/) as a tool for ORM. Dialect is PostgreSQL.
+
+```sh
+npm install --save sequelize
+npm install --save pg pg-hstore
+```
+
 Tests include coverage tool [istanbul](https://github.com/gotwarlost/istanbul). After test you can find results of coverage in `./coverage/lcov-report/index.html`. Use your browser to see it.
 
 ### Linters
