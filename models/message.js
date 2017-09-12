@@ -1,7 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     const Message = sequelize.define('Message', {
         timestamp: {
-            type: DataTypes.DATE //TIMESTAMP WITH TIME ZONE for postgres
+            //Timestamp with timezone for Postgres
+            type: DataTypes.DATE
         }
     }, {
         freezeTableName: true
